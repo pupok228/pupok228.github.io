@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="box">
+            <div class="caption">
+                <h2>Сохрани свой аккаунт</h2>
+                <h3>Получи бесплатно неограниченное количество форм, вопросов и ответов.</h3>
+            </div>
+            <form class="tab-contents" method="POST" action="#"  id="form_ajax">
+                <input type="hidden" name="kaitag" value="main_form">
+                <input class="form-1" id="name" type="text" name="username" value="" minlength="5" placeholder="Имя или никнейм">
+                <input class="form-2" id="email" type="email" name="email" value="" minlength="7" placeholder="Email">
+                <input class="form-3" id="password" type="password" name="password" value="" minlength="7" placeholder="Пароль">
+                <button class="btn" type="submit">Сохранить</button>
+            </form>
+            <div class="login">
+                <p>Уже есть аккаунт?</p>
+                <a href="#">Войти</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="jquery/jquery.validate.min.js"></script>
+    
+    <script>
+    $('form').validate({
+        rules: {
+            name: {
+                required: true,
+                minLenght: 2
+            },
+            email: {
+                required: true,
+                minlength: 7,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 7,
+                password: true
+            }
+        },
+        messages: {
+            name: {
+                required: 'Это поле обязательно для заполнения!',
+                minlength: 'Не менее 5 символов'
+            },
+            email: {
+                required: 'Это поле обязательно для заполнения!',
+                minlength: 'Не менее 7 символов',
+                email: 'Введите корректный email'
+            },
+            password: {
+                required: 'Это поле обязательно для заполнения!',
+                minlength: 'Не менее 7 символов',
+                email: 'Введите корректный пароль'
+            }
+        }
+    });
+    </script>
+        <script src="jquery/jquery-1.12.4.min.js "></script>
+    <script>
+     $(document).ready(function() {
+                $("#form_ajax").submit(function() { 
+                        $.ajax({
+                                type: "POST",
+                                url: "mail.php",
+                                data: $(this).serialize()
+                            }).done(function() {
+                                    $(this).find('input').val('');
+                                    alert("Ваше сообщение отпрвлено!");
+                                    $('#form_ajax').trigger('reset');
+                                });
+                        return false;
+                        });
+                });
+    </script>
+</body>
+
+</html>
