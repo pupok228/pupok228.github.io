@@ -73,7 +73,7 @@
                 $("#form_ajax").submit(function() { 
                         $.ajax({
                                 type: "POST",
-                                url: "smart.php",
+                                url: "mail.php",
                                 data: $(this).serialize()
                             }).done(function() {
                                     $(this).find('input').val('');
