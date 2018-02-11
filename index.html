@@ -1,59 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Калькулятор</title>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
-    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
-</head>
 
-<body>
-
-    <div class="caption">
-        <h2>Ответы на вопросы</h2>
-        <h3>Которые нам задают чаще всего</h3>
-    </div>
-    <div class="tabs-pannel">
-        <div class="tabs">
-                <div data-target="tab-content-1" class="tab tab-1"><span>Сколько времени может занять уборка 3-х комнатной квартиры?</span></div>
-                <div class="tab-contents">
-                    <p class="tab-content tab-content-1">Быстрая уборка 3 комнатной квартиры, которая включает в себя мытье полов, протирку пыли и зеркал занимает около 3 часов. Но, конечно, многое зависит от степени загрязненности и заставленности комнат.</p>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="calc">
+                        <h2>Расчет Удачной Стрелки</h2>
+                        <label for="name_baby">Выбери фильм</label><br>
+                        <select class="form-control" name="film" id="title_film">
+                            <option data-film="1" value="Будет задавать много вопросов">Бегущий По Лезвию</option>
+                            <option data-film="2" value="Не поймёт">Матрица</option>
+                            <option data-film="3" value="Пустит слезу и не поёмет">Фонтан</option>
+                            <option data-film="4" value="Скорее всего будет прятаться в твоих сиськах">Спасти Рядового Райана</option>
+                            <option data-film="5" value="Это го*но смотри только с Борей">Звездные Войны VIII</option>
+                        </select>
+                    <br>
+                    <label for="name_baby">Выбери Тёлочку</label>
+                    <select name="baby" id="name_baby" class="form-control">
+                        <option data-name="1" value="">Лена</option>
+                        <option data-name="2" value="">Вера</option>
+                        <option data-name="3" value="">Таня</option>
+                        <option data-name="4" value="">Оля</option>
+                        <option data-name="5" value="PIDR DETECTED">Боря</option>
+                    </select>
+                    <br>
+                    <label for="dude">Юрий будет дуть?</label>
+                    <select name="Yura" id="dude" class="form-control">
+                        <option value="">Да</option>
+                        <option value="">Нет</option>
+                    </select>
+                    <br>
+                    <h4>Вердикт:</h4>
+                    <span id="total"></span>
+                    </div>
                 </div>
-                <div data-target="tab-content-2" class="tab tab-2"><span>Сколько времени может занять уборка 3-х комнатной квартиры?</span></div>
-                <div class="tab-contents">
-                    <p class="tab-content tab-content-2">Быстрая уборка 3 комнатной квартиры, которая включает в себя мытье полов, протирку пыли и зеркал занимает около 3 часов. Но, конечно, многое зависит от степени загрязненности и заставленности комнат.</p>
+                <div class="col-md-4">
+                    <div class="film-imgs text-center">
+                        <img src="img/1.png" alt="" id="imgs_1">
+                        <img src="img/2.jpg" alt="" id="imgs_2">
+                        <img src="img/3.jpg" alt="" id="imgs_3">
+                        <img src="img/4.jpg" alt="" id="imgs_4">
+                        <img src="img/detective1.jpg" alt="" id="imgs_5">
+                    </div>
                 </div>
-                <div data-target="tab-content-3" class="tab tab-3"><span>Сколько времени может занять уборка 3-х комнатной квартиры?</span></div>
-                <div class="tab-contents">
-                    <p class="tab-content tab-content-3">Быстрая уборка 3 комнатной квартиры, которая включает в себя мытье полов, протирку пыли и зеркал занимает около 3 часов. Но, конечно, многое зависит от степени загрязненности и заставленности комнат.</p>
-                </div>
-                <div data-target="tab-content-4" class="tab tab-4"><span>Сколько времени может занять уборка 3-х комнатной квартиры?</span></div>
-                <div class="tab-contents">
-                    <p class="tab-content tab-content-4">Быстрая уборка 3 комнатной квартиры, которая включает в себя мытье полов, протирку пыли и зеркал занимает около 3 часов. Но, конечно, многое зависит от степени загрязненности и заставленности комнат.</p>
-                </div>
-                <div data-target="tab-content-5" class="tab tab-5"><span>Сколько времени может занять уборка 3-х комнатной квартиры?</span></div>
-                <div class="tab-contents">
-                    <p class="tab-content tab-content-5">Быстрая уборка 3 комнатной квартиры, которая включает в себя мытье полов, протирку пыли и зеркал занимает около 3 часов. Но, конечно, многое зависит от степени загрязненности и заставленности комнат.</p>
+                 <div class="col-md-4">
+                    <div class="baby-imgs text-center">
+                        <img src="img/Лена.jpg" alt="" id="photo_1">
+                        <img src="img/Вера.jpg" alt="" id="photo_2">
+                        <img src="img/Таня.jpg" alt="" id="photo_3">
+                        <img src="img/Оля.jpeg" alt="" id="photo_4">
+                        <img src="img/detective2.jpg" alt="" id="photo_5">
+                    </div>
                 </div>
             </div>
-    </div>
-    <script src="jquery/jquery-1.12.4.min.js "></script>
-    <script src="js/wow.min.js "></script>
-    <script>
-    new WOW().init();
-    </script>
-    <script>
-    var tab = $('.tab');
-    tab.click(function() {
-        var target = $(this).attr('data-target');
-        $('.tab-content').slideUp();
-        $('.' + target).slideToggle('slow')
-    });
-    		
-    </script>
-</body>
+        </div>
+    </section>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.calc select').change(function(){
+                $film = $('select#title_film').val();
+                $baby = $('select#name_baby').val();
+                $film_format = $('select#title_film option:selected').attr('data-film');
+                $name_baby = $('select#name_baby option:selected').attr('data-name');
+                $total = $('#title_film').val();
+                $('span#total').html($total, $name_baby);
+                if ($film_format == 1) {
+                    $('.film-imgs img').hide();
+                    $('#imgs_1').show(200);
+                }
+                if ($film_format == 2) {
+                    $('.film-imgs img').hide();
+                    $('#imgs_2').show(200);
+                }
+                if ($film_format == 3) {
+                    $('.film-imgs img').hide();
+                    $('#imgs_3').show(200);
+                }
+                if ($film_format == 4) {
+                    $('.film-imgs img').hide();
+                    $('#imgs_4').show(200);
+                }
+                if ($film_format == 5) {
+                    $('.film-imgs img').hide();
+                    $('#imgs_5').show(200);
+                }
+                 if ($name_baby == 1) {
+                    $('.baby-imgs img').hide();
+                    $('#photo_1').show(200);
+                }
+                if ($name_baby == 2) {
+                    $('.baby-imgs img').hide();
+                    $('#photo_2').show(200);
+                }
+                if ($name_baby == 3) {
+                    $('.baby-imgs img').hide();
+                    $('#photo_3').show(200);
+                }
+                if ($name_baby == 4) {
+                    $('.baby-imgs img').hide();
+                    $('#photo_4').show(200);
+                }
+                if ($name_baby == 5) {
+                    $('.baby-imgs img').hide();
+                    $('#photo_5').show(200);
+                }
+           })
+        });
+    </script>
+  </body>
 </html>
